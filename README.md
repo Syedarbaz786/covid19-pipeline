@@ -45,7 +45,23 @@ The datasets used and sources include:
 ## Steps:
 1- The dataset is pulled from the ecdc websites using the Azure data factory.
 2- The http ingestion is done.
-3- For the data storage we use Azure Data Lake Gen 2
+3- For the data storage we use Azure Blob Storage & Azure Data Lake Gen 2.
+4- Creating the pipeline to carryout process.
+5- Creating the Source and Sink Datasets.
+6- Creating the Linked services Azure blob, Azure data lake gen 2, HTTP.
+7- Data Ingestion from Azure Blob Storage is done.
+8- Control Flow Activities Validation, Get Metadata, if condition, Web Activities has been carried out. Attached image for reference
+![image](https://github.com/Syedarbaz786/covid19-pipeline/assets/149040461/d9bcfc29-17c2-4b79-8391-8987d72eb3b8)
+9- Creating Storage Evet Trigger as whole data is required.
+10- Creating the pipeline Variables, Pipeline Parameters and giving the values of Source, Sink and Base. i.e., ( sourceRelativeURL, sinkFileName, sourcebaseURL ).
+11- Creating Schedule Trigger for data to copy for specific time interval.
+12- Creating Lookup activity and it is used so that the new pipeline is not required for copy the data from HTTP for 'N' numbers of file it will copy all the files from source to sink for that we have to put all the URL links in one JSON file and put it into HTTP dataset by creating a new dataset of HTTP.
+13- Creating For loop and it is used to copy the data in a sequential manner.
+14- Control flow activities Lookup and For loop image attached for your reference.
+![image](https://github.com/Syedarbaz786/covid19-pipeline/assets/149040461/10e1cff8-d7d8-4d1d-a321-fb82aa025952)
+15- Linked service, Pipeline has to parameterized.
+
+
 
 ## Built With
 - Microsoft Azure
